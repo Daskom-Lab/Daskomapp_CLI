@@ -29,8 +29,11 @@ if inp == '2':
     modul=input("Masukan modul (dengan angka): ")
     response=requests.post(website+"/getAllLaporan/"+modul);
     output=response.json()
-    for n in range(4):
-        print("================ S H I F T  "+str(n+1)+" ================")
+    #print(output)
+    for n in range(11):
+        shift=output['all_laporan'][n]['shift']
+        print("================ S H I F T  "+str(shift)+" ================")
+        print(output['all_laporan'][n]['hari'])
         print(output['all_laporan'][n]['laporan'])
         print("\n")
 if inp=='1':
